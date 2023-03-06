@@ -37,7 +37,7 @@ pipeline {
             steps{
                 script {
                     docker.withRegistry( 'https://hub.docker.com/r/eayar/snake-eayar', docker-hub-credentials ) { 
-                        dockerImage.push() 
+                        app.push() 
                     }   
                 }
             }
