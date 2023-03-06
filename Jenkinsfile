@@ -20,6 +20,7 @@ pipeline {
         stage('build'){
             steps{
                 sh 'whoami'
+                sh 'pwd'
                 script {
                     app = docker.build("eayar/snake-eayar:${env.BUILD_ID}")
                 }
