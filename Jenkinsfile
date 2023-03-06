@@ -17,7 +17,7 @@ pipeline {
         
         stage('build'){
             steps{
-                sh ''
+                app=docker.build("eayar123/snake-eayar:${env.BUILD_ID}")
             }
         }
         
