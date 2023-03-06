@@ -36,8 +36,8 @@ pipeline {
         stage('push to dockerhub'){
             steps{
                 script {
-                    docker.withRegistry( 'https://hub.docker.com/r/eayar/snake-eayar', docker-hub-credentials ) { 
-                        app.push() 
+                    docker.withRegistry( 'https://hub.docker.com', docker-hub-credentials ) { 
+                        app.push("${env.BUILD_ID}") 
                     }   
                 }
             }
