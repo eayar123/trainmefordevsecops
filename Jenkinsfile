@@ -1,5 +1,5 @@
 pipeline {
-    agent any
+    agent slave-1-docker
 
 
     stages {
@@ -17,7 +17,9 @@ pipeline {
         
         stage('build'){
             steps{
-                app=docker.build("eayar123/snake-eayar:${env.BUILD_ID}")
+                script {
+                    app = docker.build("eayar123/snake-eayar:${env.BUILD_ID}")
+                }
             }
         }
         
