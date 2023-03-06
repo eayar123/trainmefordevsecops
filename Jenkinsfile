@@ -37,7 +37,8 @@ pipeline {
             steps{
                 script {
                     docker.withRegistry( '', 'docker-hub-credentials' ) { 
-                        app.push(["${env.BUILD_ID}","latest")
+                        app.push("${env.BUILD_ID}")
+                        app.push("latest")
                     }   
                 }
             }
