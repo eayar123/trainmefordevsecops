@@ -35,13 +35,17 @@ pipeline {
         
         stage('push to dockerhub'){
             steps{
-                sh ''
+                script {
+                    docker.withRegistry( 'https://hub.docker.com/r/eayar/snake-eayar', docker-hub-credentials ) { 
+                        dockerImage.push() 
+                    }   
+                }
             }
         }
         
         stage('pull image server'){
             steps{
-                sh 'docker push eayar/snake-eayar:${env.BUILD_ID}'
+                sh ''
             }
         }
         
