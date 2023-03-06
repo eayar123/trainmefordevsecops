@@ -20,7 +20,7 @@ pipeline {
         stage('build'){
             steps{
                 script {
-                    app = docker.build("eayar123/snake-eayar:${env.BUILD_ID}")
+                    app = docker.build("eayar/snake-eayar:${env.BUILD_ID}")
                 }
             }
         }
