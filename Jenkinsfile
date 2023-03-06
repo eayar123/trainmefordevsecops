@@ -41,7 +41,7 @@ pipeline {
         
         stage('pull image server'){
             steps{
-                sh ''
+                sh 'docker push eayar/snake-eayar:${env.BUILD_ID}'
             }
         }
         
