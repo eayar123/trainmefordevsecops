@@ -46,7 +46,8 @@ pipeline {
         
         stage('pull image server'){
             steps{
-                sh ''
+                sh 'docker-compose down'
+                sh 'docker-compose up'
             }
         }
         
