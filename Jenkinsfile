@@ -15,7 +15,6 @@ pipeline {
         stage('SAST - sonarqube'){
             steps{
                 withSonarQubeEnv('SonarCloud') { 
-                sh 'mvn clean package sonar:sonar'
                 }
             }
                 
