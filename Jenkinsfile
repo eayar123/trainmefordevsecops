@@ -15,8 +15,7 @@ pipeline {
         stage('SAST - sonarqube'){
             steps{
                 withSonarQubeEnv('SonarCloud') { 
-                sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:SonarCloud ' + 
-                '-Dsonar.projectKey=trainmefordevsecops:all:email-notification ' +
+                sh '-Dsonar.projectKey=trainmefordevsecops:all:email-notification ' +
                 '-Dsonar.sources=. '
                 }
             }
