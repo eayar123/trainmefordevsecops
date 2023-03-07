@@ -15,8 +15,7 @@ pipeline {
         stage('SAST - sonarqube'){
             steps{
                 withSonarQubeEnv('SonarCloud') { 
-                sh '-Dsonar.projectKey=eayar-snake-devops-course:all:email-notification ' +
-                '-Dsonar.sources=. '
+                sh 'mvn clean package sonar:sonar'
                 }
             }
                 
