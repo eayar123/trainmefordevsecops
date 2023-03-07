@@ -15,7 +15,7 @@ pipeline {
         stage('SAST - sonarqube'){
             steps{
                 withSonarQubeEnv('SonarCloud') { 
-                sh '-Dsonar.projectKey=trainmefordevsecops:all:email-notification ' +
+                sh '-Dsonar.projectKey=eayar-snake-devops-course:all:email-notification ' +
                 '-Dsonar.sources=. '
                 }
             }
