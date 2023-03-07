@@ -10,7 +10,7 @@ pipeline {
                 checkout scmGit(branches: [[name: 'email-notification']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/eayar123/trainmefordevsecops.git']])
             }
         }
-    }
+    
 
         stage('SAST - sonarqube'){
             steps{
@@ -24,7 +24,7 @@ pipeline {
         }
     
         
-        stage('build'){
+        stage('build') {
             steps{
                 sh 'whoami'
                 sh 'pwd'
