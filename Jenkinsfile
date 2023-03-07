@@ -16,6 +16,7 @@ pipeline {
             steps{
                 withSonarQubeEnv('SonarCloud') { 
                 }
+                sh 'scan complete'
             }
                 
         }
