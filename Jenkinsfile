@@ -11,7 +11,7 @@ pipeline {
             }
         }
         
-        stage('SAST'){
+        stage('SAST - sonarqube'){
             steps{
                 sh ''
             }
@@ -47,7 +47,7 @@ pipeline {
         stage('pull image server'){
             steps{
                 sh 'docker-compose down'
-                sh 'docker-compose up'
+                sh 'docker-compose up -d'
             }
         }
         
