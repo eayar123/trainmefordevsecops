@@ -10,6 +10,7 @@ pipeline {
                 checkout scmGit(branches: [[name: 'email-notification']], extensions: [], userRemoteConfigs: [[url: 'https://github.com/eayar123/trainmefordevsecops.git']])
             }
         }
+    }
         
         stage('SAST - sonarqube'){
             steps{
@@ -17,10 +18,11 @@ pipeline {
                 sh 'mvn org.sonarsource.scanner.maven:sonar-maven-plugin:3.3.0.603:SonarCloud ' + 
                 '-Dsonar.projectKey=trainmefordevsecops:all:email-notification ' +
                 '-Dsonar.sources=. ' +
-        }
-                
+                }
             }
+                
         }
+    
         
         stage('build'){
             steps{
