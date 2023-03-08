@@ -15,6 +15,11 @@ pipeline {
         stage('SAST - sonarqube'){
             steps{
                 withSonarQubeEnv('SonarCloud') { 
+                    sh '''sonar-scanner \
+                        -Dsonar.organization=trainmefordevsecops \
+                        -Dsonar.projectKey=eayar-snake-devops-couse_trainmefordevsecops \
+                        -Dsonar.sources=. \
+                        -Dsonar.host.url=https://sonarcloud.io'''
 
                 }
                 sh 'scan complete'
