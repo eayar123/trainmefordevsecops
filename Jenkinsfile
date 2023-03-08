@@ -14,6 +14,11 @@ pipeline {
 
         stage('SAST - sonarqube'){
             steps{
+                sh '''
+                    ls
+                    pwd
+                '''
+
                 withSonarQubeEnv('SonarCloud') { 
                     sh '''sonar-scanner \
                         -Dsonar.organization=trainmefordevsecops \
@@ -22,10 +27,7 @@ pipeline {
                         -Dsonar.host.url=https://sonarcloud.io'''
 
                 }
-                sh '''
-                    ls
-                    pwd
-                '''
+                
             }
                 
         }
