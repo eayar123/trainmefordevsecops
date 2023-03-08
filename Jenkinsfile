@@ -18,7 +18,7 @@ pipeline {
                     sh '''sonar-scanner \
                         -Dsonar.organization=trainmefordevsecops \
                         -Dsonar.projectKey=eayar-snake-devops-couse_trainmefordevsecops \
-                        -Dsonar.sources=. \
+                        -Dsonar.sources=/home/ubuntu/jenkins/workspace/snake \
                         -Dsonar.host.url=https://sonarcloud.io'''
 
                 }
