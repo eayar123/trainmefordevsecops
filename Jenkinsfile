@@ -15,6 +15,8 @@ pipeline {
         stage('SAST - sonarqube'){
             steps{
                 withSonarQubeEnv('SonarCloud') { 
+                    sh '''$SCANNER_HOME/bin/sonar-scanner \'''
+
                 }
                 sh 'scan complete'
             }
