@@ -22,7 +22,10 @@ pipeline {
                         -Dsonar.host.url=https://sonarcloud.io'''
 
                 }
-                sh 'scan complete'
+                sh '''
+                    ls
+                    pwd
+                '''
             }
                 
         }
